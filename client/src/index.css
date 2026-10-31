@@ -38,3 +38,14 @@ body {
 html { -webkit-tap-highlight-color: transparent; }
 body { overflow-x: clip; }
 @media (max-width: 640px) { input, textarea, select { font-size: 16px; } }
+
+@keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg) } 100% { transform: translateX(240%) skewX(-18deg) } }
+.shine-wrap { position: relative; overflow: hidden; }
+.shine-wrap::before { content: ''; position: absolute; top: 0; bottom: 0; width: 45%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent); animation: shine 2.8s ease-in-out infinite; }
+
+@keyframes bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.bob { animation: bob 4.5s ease-in-out infinite; }
+.bob-slow { animation: bob 6.5s ease-in-out infinite; }
+
+.glow-card { box-shadow: 0 0 0 1px rgba(129,140,248,.35), 0 24px 70px -18px rgba(79,70,229,.55), 0 8px 30px rgba(0,0,0,.45); }
+.chat-bg { background-color: #f4f7ff; background-image: radial-gradient(rgba(99,102,241,.10) 1.2px, transparent 1.2px); background-size: 22px 22px; }
