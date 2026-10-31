@@ -2,15 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body { background: #f2f5f9; font-family: 'Segoe UI', system-ui, sans-serif; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0b1023;
+}
 
 @keyframes blink { 0%, 80%, 100% { opacity: .25 } 40% { opacity: 1 } }
 .dot { animation: blink 1.2s infinite; }
 .dot:nth-child(2) { animation-delay: .15s; }
 .dot:nth-child(3) { animation-delay: .3s; }
 
-@keyframes radar { 0% { transform: scale(.6); opacity: .7 } 100% { transform: scale(2.2); opacity: 0 } }
-.radar::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; border: 2px solid #22c55e; animation: radar 1.6s ease-out infinite; }
+@keyframes radar { 0% { transform: scale(.6); opacity: .7 } 100% { transform: scale(2.4); opacity: 0 } }
+.radar::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; border: 2px solid #34d399; animation: radar 1.6s ease-out infinite; }
+
+@keyframes floaty { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+.blob { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .5; animation: floaty 9s ease-in-out infinite; pointer-events: none; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
+.rise { animation: riseIn .45s ease both; }
+
+@keyframes popIn { from { opacity: 0; transform: scale(.96) translateY(6px) } to { opacity: 1; transform: scale(1) translateY(0) } }
+.msg { animation: popIn .22s ease both; }
+
+.glass { background: rgba(255,255,255,.08); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.14); }
+.glass-strong { background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
+
+.grad-text { background: linear-gradient(90deg, #818cf8, #22d3ee, #34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-btn { background: linear-gradient(90deg, #10b981, #06b6d4); }
+.grad-btn:hover { background: linear-gradient(90deg, #059669, #0891b2); }
+.grad-send { background: linear-gradient(135deg, #6366f1, #06b6d4); }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(100,116,139,.45); border-radius: 8px; }
