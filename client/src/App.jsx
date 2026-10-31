@@ -100,21 +100,21 @@ export default function App() {
   }, [screen, state]);
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-x-hidden text-slate-100" style={{ background: "radial-gradient(1200px 600px at 80% -10%, #1e2a5a 0%, transparent 60%), radial-gradient(1000px 500px at 0% 110%, #0e3a4a 0%, transparent 55%), #0b1023" }}>
+    <div className="min-h-screen min-h-[100dvh] flex flex-col relative overflow-x-hidden text-slate-100" style={{ background: "radial-gradient(1200px 600px at 80% -10%, #1e2a5a 0%, transparent 60%), radial-gradient(1000px 500px at 0% 110%, #0e3a4a 0%, transparent 55%), #0b1023" }}>
       <div className="blob w-72 h-72 bg-indigo-600 -top-10 -left-10" />
       <div className="blob w-80 h-80 bg-cyan-500 top-1/3 -right-16" style={{ animationDelay: "-3s" }} />
       <div className="blob w-64 h-64 bg-emerald-500 -bottom-16 left-1/4" style={{ animationDelay: "-6s" }} />
 
       {/* Header — same position */}
       <header className="glass sticky top-0 z-10 border-x-0 border-t-0">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-9 h-9 rounded-xl grad-send text-white grid place-items-center shadow-lg shadow-indigo-900/50">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
             </span>
-            <span className="text-xl font-extrabold tracking-tight">Chat<span className="grad-text">ly</span></span>
+            <span className="text-lg sm:text-xl font-extrabold tracking-tight">Chat<span className="grad-text">ly</span></span>
           </div>
-          <div className="flex items-center gap-2 text-sm font-semibold text-emerald-300 bg-emerald-400/10 border border-emerald-300/25 rounded-full px-3 py-1">
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-300 bg-emerald-400/10 border border-emerald-300/25 rounded-full px-3 py-1">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             {online} online now
           </div>
@@ -123,19 +123,19 @@ export default function App() {
 
       {screen === "home" ? (
         <main className="flex-1 relative">
-          <div className="max-w-5xl mx-auto px-4 pt-12 pb-6 text-center rise">
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">Random Text Chat<br /><span className="grad-text">with Strangers</span></h1>
+          <div className="max-w-5xl mx-auto px-4 pt-8 sm:pt-12 pb-6 text-center rise">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">Random Text Chat<br /><span className="grad-text">with Strangers</span></h1>
             <p className="text-slate-400 mt-4 max-w-xl mx-auto">Meet new people from around the world in one click. No sign-up, no profile — just pick your interests and start a conversation.</p>
           </div>
 
           {/* Mode tabs — same position */}
           <div className="max-w-xl mx-auto px-4 rise">
             <div className="flex gap-1.5 justify-center mb-5 glass rounded-full p-1.5 w-fit mx-auto">
-              <button className="px-5 py-2 rounded-full grad-send text-white font-semibold shadow-lg shadow-indigo-900/40">💬 Text Chat</button>
-              <button disabled className="px-5 py-2 rounded-full text-slate-400 font-semibold cursor-not-allowed" title="Text chat only">📹 Video <span className="text-[10px] align-top bg-white/10 rounded px-1">SOON</span></button>
+              <button className="px-4 sm:px-5 py-2 rounded-full grad-send text-white font-semibold shadow-lg shadow-indigo-900/40">💬 Text Chat</button>
+              <button disabled className="px-4 sm:px-5 py-2 rounded-full text-slate-400 font-semibold cursor-not-allowed" title="Text chat only">📹 Video <span className="text-[10px] align-top bg-white/10 rounded px-1">SOON</span></button>
             </div>
 
-            <div className="glass-strong text-slate-800 rounded-3xl shadow-2xl shadow-black/40 p-5 md:p-7 text-left">
+            <div className="glass-strong text-slate-800 rounded-3xl shadow-2xl shadow-black/40 p-4 sm:p-5 md:p-7 text-left">
               <label className="block text-sm font-bold text-slate-700 mb-1">Your interests <span className="font-normal text-slate-400">(optional)</span></label>
               <input
                 value={interests}
@@ -162,7 +162,7 @@ export default function App() {
           </div>
 
           {/* Features — same position */}
-          <div className="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-4 relative">
+          <div className="max-w-5xl mx-auto px-4 py-8 sm:py-10 grid md:grid-cols-3 gap-3 sm:gap-4 relative">
             {[
               ["🕶️", "Fully Anonymous", "Chat without revealing anything about yourself. No account, no history, no trace when you leave."],
               ["🎯", "Interest Matching", "Add topics you like and get paired with people who like the same things. Conversations start easier."],
@@ -183,8 +183,8 @@ export default function App() {
           </div>
         </main>
       ) : (
-        <main className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-4 py-4 relative">
-          <div className="glass-strong text-slate-800 rounded-3xl shadow-2xl shadow-black/40 flex flex-col flex-1 overflow-hidden rise" style={{ minHeight: "72vh" }}>
+        <main className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-2.5 sm:px-4 py-3 sm:py-4 relative">
+          <div className="glass-strong text-slate-800 rounded-3xl shadow-2xl shadow-black/40 flex flex-col flex-1 overflow-hidden rise" style={{ minHeight: "68dvh" }}>
             {/* Chat header — same position */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-white/70">
               <div className="flex items-center gap-2">
@@ -212,7 +212,7 @@ export default function App() {
                   <div key={i} className="text-center text-xs text-slate-400 py-1">{m.text}</div>
                 ) : (
                   <div key={i} className={`flex msg ${m.from === "you" ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[75%] px-4 py-2.5 rounded-3xl text-[15px] leading-snug shadow ${m.from === "you" ? "grad-send text-white rounded-br-lg" : "bg-white border border-slate-100 text-slate-800 rounded-bl-lg"}`}>
+                    <div className={`max-w-[85%] sm:max-w-[75%] px-3.5 sm:px-4 py-2.5 rounded-3xl text-[15px] leading-snug shadow ${m.from === "you" ? "grad-send text-white rounded-br-lg" : "bg-white border border-slate-100 text-slate-800 rounded-bl-lg"}`}>
                       {m.text}
                     </div>
                   </div>
@@ -240,10 +240,10 @@ export default function App() {
                   <button
                     onClick={next}
                     disabled={state !== "connected"}
-                    className="px-4 py-3 rounded-2xl bg-slate-900 text-white font-bold disabled:opacity-40 hover:bg-slate-700 transition"
+                    className="px-3 sm:px-4 py-3 rounded-2xl bg-slate-900 text-white font-bold text-sm sm:text-base disabled:opacity-40 hover:bg-slate-700 transition"
                     title="Next stranger (Esc)"
                   >New</button>
-                  <button onClick={stop} className="px-4 py-3 rounded-2xl bg-red-50 text-red-600 border border-red-200 font-bold hover:bg-red-100 transition">Stop</button>
+                  <button onClick={stop} className="px-3 sm:px-4 py-3 rounded-2xl bg-red-50 text-red-600 border border-red-200 font-bold text-sm sm:text-base hover:bg-red-100 transition">Stop</button>
                   <input
                     value={input}
                     onChange={(e) => onType(e.target.value)}
@@ -251,12 +251,12 @@ export default function App() {
                     placeholder={state === "connected" ? "Type a message…" : "Waiting for a stranger…"}
                     disabled={state !== "connected"}
                     maxLength={500}
-                    className="flex-1 border border-slate-200 bg-slate-50 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 disabled:bg-slate-50 transition"
+                    className="flex-1 min-w-0 border border-slate-200 bg-slate-50 rounded-2xl px-3.5 sm:px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 disabled:bg-slate-50 transition"
                   />
                   <button
                     onClick={send}
                     disabled={state !== "connected" || !input.trim()}
-                    className="px-5 py-3 rounded-2xl grad-send text-white font-bold disabled:opacity-40 shadow-lg shadow-indigo-600/20"
+                    className="px-4 sm:px-5 py-3 rounded-2xl grad-send text-white font-bold text-sm sm:text-base disabled:opacity-40 shadow-lg shadow-indigo-600/20"
                   >Send</button>
                 </div>
               )}
